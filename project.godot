@@ -62,4 +62,4 @@ up={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.0235294, 0.152941, 0.14902, 1)
+environment/defaults/default_clear_color=Color(0.2509804, 0.2784314, 0.30588236, 1)

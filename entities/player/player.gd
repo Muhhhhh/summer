@@ -109,7 +109,7 @@ func _handle_run(x_input: int, delta: float) -> void:
 		if Input.is_action_just_pressed("dash") and _dash_uses_left > 0: # Set the velocity to the dash speed if the player presses the dash button and has uses left
 			velocity.x = x_input * dash_speed
 			_dash_uses_left -= 1
-		elif abs(velocity.x) < move_speed: # If the player is moving slower than the max speed, accelerate them towards the input direction
+		elif abs(velocity.x) < move_speed or velocity.x * x_input < 0: # If the player is moving slower than the max speed, accelerate them towards the input direction
 			velocity.x = move_toward(velocity.x, x_input * move_speed, (acceleration if is_on_floor() else air_acceleration) * delta)
 	else: # If the player isn't pressing any input, dampen the horizontal velocity to simulate friction or air resistance
 		velocity.x = lerp(velocity.x, 0.0, 1.0 - exp(-delta / (friction_scale if is_on_floor() else air_resistance_scale)))

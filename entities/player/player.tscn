@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://cqarqb10xd1wh"]
+
+[ext_resource type="Script" uid="uid://cvi6sjgwuvoxr" path="res://entities/player/player.gd" id="1_abrql"]
+[ext_resource type="Texture2D" uid="uid://bpn3luiydhys8" path="res://temp_assets/2d_lights_and_shadows_neutral_point_light.png" id="2_sglur"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gkk85"]
+radius = 8.0
+height = 32.0
+
+[node name="Player" type="CharacterBody2D" unique_id=127364493 node_paths=PackedStringArray("grounded_rays", "right_rays", "left_rays")]
+script = ExtResource("1_abrql")
+grounded_rays = NodePath("Grounded Rays")
+right_rays = NodePath("Right Rays")
+left_rays = NodePath("Left Rays")
+friction_scale = 0.1
+metadata/_edit_group_ = true
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=996985043]
+position = Vector2(0, -16)
+scale = Vector2(3, 3)
+color = Color(1, 1, 1, 0.329412)
+shadow_enabled = true
+shadow_filter_smooth = 1.0
+texture = ExtResource("2_sglur")
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=1439239999]
+position = Vector2(0, -16)
+scale = Vector2(3, 3)
+color = Color(1, 1, 1, 0.333333)
+range_item_cull_mask = 3
+shadow_enabled = true
+shadow_filter_smooth = 1.0
+shadow_item_cull_mask = 2
+texture = ExtResource("2_sglur")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=2068922759]
+polygon = PackedVector2Array(-8, -32, 8, -32, 8, 0, -8, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=27712462]
+position = Vector2(0, -16)
+shape = SubResource("CapsuleShape2D_gkk85")
+
+[node name="Grounded Rays" type="Node2D" parent="." unique_id=957464452]
+
+[node name="RayCast2D" type="RayCast2D" parent="Grounded Rays" unique_id=275976934]
+target_position = Vector2(0, 16)
+
+[node name="RayCast2D2" type="RayCast2D" parent="Grounded Rays" unique_id=1912700630]
+position = Vector2(-6, 0)
+target_position = Vector2(0, 16)
+
+[node name="RayCast2D3" type="RayCast2D" parent="Grounded Rays" unique_id=619651477]
+position = Vector2(6, 0)
+target_position = Vector2(0, 16)
+
+[node name="Right Rays" type="Node2D" parent="." unique_id=1146099345]
+
+[node name="Right" type="RayCast2D" parent="Right Rays" unique_id=1776327234]
+position = Vector2(8, -16)
+target_position = Vector2(8, 0)
+
+[node name="Right2" type="RayCast2D" parent="Right Rays" unique_id=403768876]
+position = Vector2(8, -24)
+target_position = Vector2(8, 0)
+
+[node name="Right3" type="RayCast2D" parent="Right Rays" unique_id=1979212797]
+position = Vector2(8, -8)
+target_position = Vector2(8, 0)
+
+[node name="Left Rays" type="Node2D" parent="." unique_id=1766028049]
+
+[node name="Left" type="RayCast2D" parent="Left Rays" unique_id=926799035]
+position = Vector2(-8, -16)
+target_position = Vector2(-8, 0)
+
+[node name="Left2" type="RayCast2D" parent="Left Rays" unique_id=977670086]
+position = Vector2(-8, -24)
+target_position = Vector2(-8, 0)
+
+[node name="Left3" type="RayCast2D" parent="Left Rays" unique_id=1477551072]
+position = Vector2(-8, -8)
+target_position = Vector2(-8, 0)

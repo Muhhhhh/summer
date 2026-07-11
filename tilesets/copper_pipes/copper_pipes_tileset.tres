@@ -38,6 +38,9 @@ polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_k2jnj"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vetgc"]
+polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_usa7q"]
 polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 
@@ -2529,6 +2532,7 @@ texture_region_size = Vector2i(48, 48)
 19:14/0/terrains_peering_bit/top_side = 0
 21:14/0 = 0
 21:14/0/terrain_set = 0
+21:14/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_vetgc")
 21:14/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 
 [resource]

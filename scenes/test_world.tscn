@@ -31,12 +31,12 @@ metadata/_edit_horizontal_guides_ = [2016.0]
 modulate = Color(0.205117, 0.205117, 0.205117, 1)
 polygon = PackedVector2Array(-100, -100, 10000, -100, 10000, 10000, -100, 10000)
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=93198577 node_paths=PackedStringArray("grounded_rays", "right_ray", "left_ray")]
+[node name="Player" type="CharacterBody2D" parent="." unique_id=93198577 node_paths=PackedStringArray("grounded_rays", "right_rays", "left_rays")]
 position = Vector2(379, 441)
 script = ExtResource("1_t2am2")
 grounded_rays = NodePath("Grounded Rays")
-right_ray = NodePath("Right")
-left_ray = NodePath("Left")
+right_rays = NodePath("Right Rays")
+left_rays = NodePath("Left Rays")
 friction_scale = 0.1
 metadata/_edit_group_ = true
 
@@ -78,12 +78,32 @@ target_position = Vector2(0, 16)
 position = Vector2(6, 0)
 target_position = Vector2(0, 16)
 
-[node name="Right" type="RayCast2D" parent="Player" unique_id=81957189]
+[node name="Right Rays" type="Node2D" parent="Player" unique_id=2089211632]
+
+[node name="Right" type="RayCast2D" parent="Player/Right Rays" unique_id=81957189]
 position = Vector2(8, -16)
 target_position = Vector2(8, 0)
 
-[node name="Left" type="RayCast2D" parent="Player" unique_id=2039007647]
+[node name="Right2" type="RayCast2D" parent="Player/Right Rays" unique_id=678750801]
+position = Vector2(8, -24)
+target_position = Vector2(8, 0)
+
+[node name="Right3" type="RayCast2D" parent="Player/Right Rays" unique_id=956169019]
+position = Vector2(8, -8)
+target_position = Vector2(8, 0)
+
+[node name="Left Rays" type="Node2D" parent="Player" unique_id=524810184]
+
+[node name="Left" type="RayCast2D" parent="Player/Left Rays" unique_id=2039007647]
 position = Vector2(-8, -16)
+target_position = Vector2(-8, 0)
+
+[node name="Left2" type="RayCast2D" parent="Player/Left Rays" unique_id=2038582965]
+position = Vector2(-8, -24)
+target_position = Vector2(-8, 0)
+
+[node name="Left3" type="RayCast2D" parent="Player/Left Rays" unique_id=1680346141]
+position = Vector2(-8, -8)
 target_position = Vector2(-8, 0)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1607654607 node_paths=PackedStringArray("target")]

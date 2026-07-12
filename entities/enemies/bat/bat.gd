@@ -2,13 +2,13 @@ extends Node2D
 
 @export var cooldown: float = 2
 @export var player_detector: Area2D
-@export var speed: float = 200
-@export var knockback: float = 1600
-@export var aerial_knockback: float = 800
+@export var speed: float = 800
+@export var knockback: float = 3200
+@export var aerial_knockback: float = 2400
 @export var hp: float = 4
 @export var damage: float = 1
 @export var damage_hitbox: Area2D
-@export var stop_distance: float = 8
+@export var stop_distance: float = 32
 
 var target: Player
 var velocity: Vector2 = Vector2.ZERO
@@ -22,7 +22,7 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if not target: 
 		return
-	if target.global_position.distance_squared_to(global_position) >= stop_distance: 
+	if target.global_position.distance_squared_to(global_position) >= stop_distance*stop_distance: 
 		velocity = global_position.direction_to(target.global_position) * speed
 		global_position += velocity * delta
 

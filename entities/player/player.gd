@@ -5,10 +5,10 @@ class_name Player
 @export var max_hp: float = 3
 @export var weapon: Weapon
 @export_group("Aerial Physics")
-@export var gravity: float = 1600
+@export var gravity: float = 6400
 @export_subgroup("Jump")
-@export var jump_height: float = 192
-@export var min_jump_height: float = 64
+@export var jump_height: float = 768
+@export var min_jump_height: float = 256
 @export var grounded_rays: Node2D
 @export var coyote_time: float = 0.1
 @export_subgroup("Wall Jump")
@@ -19,19 +19,19 @@ class_name Player
 @export var wall_jump_velocity: float
 @export var wall_jump_uses: int = 5
 @export var wall_jump_cooldown: float = 0.5
-@export var sliding_gravity_cap: float = 200
+@export var sliding_gravity_cap: float = 800
 @export_group("Grounded Physics")
-@export var move_speed: float = 400
-@export var acceleration: float = 3200
+@export var move_speed: float = 1600
+@export var acceleration: float = 12800
 @export var friction_scale: float = 0.2
 @export_subgroup("Dash")
-@export var dash_speed: float = 2400
+@export var dash_speed: float = 9600
 @export var dash_damping_scale: float = 0.25
 @export var dash_uses: int = 2
 @export var dash_cooldown: float = 1.0
 @export var require_ground_to_get_dash: bool = false
 @export_group("Floating Physics")
-@export var air_acceleration: float = 1600
+@export var air_acceleration: float = 6400
 @export var air_resistance_scale: float = 10
 
 @onready var hp: float = max_hp

@@ -1,10 +1,10 @@
 [gd_resource type="TileSet" format=3 uid="uid://ovkv15d5sgps"]
 
-[ext_resource type="Texture2D" uid="uid://c56ufnf1qn3l5" path="res://tilesets/copper_pipes/pipe_background.png" id="1_nosct"]
+[ext_resource type="Texture2D" uid="uid://ttcx8y3l6rgl" path="res://tilesets/copper_pipes/source_images/pipes.png" id="2_dix01"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_js41p"]
-texture = ExtResource("1_nosct")
-texture_region_size = Vector2i(48, 48)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m3u7x"]
+texture = ExtResource("2_dix01")
+texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -16,7 +16,7 @@ texture_region_size = Vector2i(48, 48)
 2:1/0 = 0
 3:1/0 = 0
 4:1/0 = 0
-7:1/0 = 0
+5:1/0 = 0
 0:2/0 = 0
 1:2/0 = 0
 2:2/0 = 0
@@ -25,5 +25,5 @@ texture_region_size = Vector2i(48, 48)
 5:2/0 = 0
 
 [resource]
-tile_size = Vector2i(48, 48)
-sources/0 = SubResource("TileSetAtlasSource_js41p")
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_m3u7x")

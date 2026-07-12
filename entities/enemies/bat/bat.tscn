@@ -5,13 +5,13 @@
 [ext_resource type="Script" uid="uid://bvsew3mbst20a" path="res://entities/hurtbox.gd" id="3_lmyjq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p8eaw"]
-radius = 256.0
+radius = 1024.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lmyjq"]
-radius = 16.0
+radius = 64.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w0bok"]
-radius = 32.0
+radius = 128.0
 
 [node name="Bat" type="Node2D" unique_id=394312831 node_paths=PackedStringArray("player_detector", "damage_hitbox")]
 script = ExtResource("1_w0bok")
@@ -19,7 +19,7 @@ player_detector = NodePath("Player Detector")
 damage_hitbox = NodePath("Hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1709554304]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_lmyjq")
 
 [node name="Player Detector" type="Area2D" parent="." unique_id=632272163]

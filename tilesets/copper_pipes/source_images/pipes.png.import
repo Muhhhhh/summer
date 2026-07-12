@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c56ufnf1qn3l5"
-path="res://.godot/imported/pipe_background.png-d73a30fcc21eb16ede3b29562de30e14.ctex"
+uid="uid://ttcx8y3l6rgl"
+path="res://.godot/imported/pipes.png-e2fc95a0715503e9315bf019368fab98.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/copper_pipes/pipe_background.png"
-dest_files=["res://.godot/imported/pipe_background.png-d73a30fcc21eb16ede3b29562de30e14.ctex"]
+source_file="res://tilesets/copper_pipes/source_images/pipes.png"
+dest_files=["res://.godot/imported/pipes.png-e2fc95a0715503e9315bf019368fab98.ctex"]
 
 [params]
 

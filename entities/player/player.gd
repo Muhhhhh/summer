@@ -53,6 +53,8 @@ func _ready() -> void:
 	if identical_jump_velocity: 
 		wall_jump_velocity = abs(_jump_velocity)
 
+var right_particles_timer: float = 0.0
+var left_particles_timer: float = 0.0
 
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
@@ -67,7 +69,21 @@ func _physics_process(delta: float) -> void:
 	_handle_wall_jump(x_input)
 	_handle_jump()
 
-	
+	# delete this when you have actual animations
+	$Polygon2D.rotation_degrees = clamp(velocity.x / move_speed * 10, -20, 20)
+	$GroundParticles.emitting = grounded and abs(velocity.x) >= move_speed * 0.5
+	$"Dash Trail".emitting = abs(velocity.x) > move_speed * 2
+	if $RightParticles.emitting: 
+		right_particles_timer += delta
+		if right_particles_timer >= 0.1: 
+			$RightParticles.emitting = false
+			right_particles_timer = 0.0
+	if $LeftParticles.emitting:
+		left_particles_timer += delta
+		if left_particles_timer >= 0.1: 
+			$LeftParticles.emitting = false
+			left_particles_timer = 0.0
+
 	move_and_slide()
 
 
@@ -88,11 +104,13 @@ func _handle_wall_jump(x_input: int) -> void:
 			velocity = _right_wall_jump_direction * wall_jump_velocity
 			_wall_jump_uses_left -= 1
 			_last_wall_jumped = 0
+			$LeftParticles.emitting = true
 		
 		if Input.is_action_just_pressed("up") and x_input == 1 and right_colliding: 
 			velocity = _left_wall_jump_direction * wall_jump_velocity
 			_wall_jump_uses_left -= 1
 			_last_wall_jumped = 0
+			$RightParticles.emitting = true
 	
 	# Slide on walls if you're "moving" into them
 	if (x_input == -1 and left_colliding) or (x_input == 1 and right_colliding): 

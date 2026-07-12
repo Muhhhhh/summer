@@ -1,3 +1,4 @@
+@tool
 extends TileMapLayer
 class_name MazeGen
 
@@ -18,6 +19,22 @@ var current_letter_num = 65
 @export var starting_coords = Vector2i(0, 0)
 @export var pipes: Array[Vector2i]
 
+@export var generate: bool = false: 
+	set(_value): 
+		clear()
+		maze = []
+		for y in range(y_dim + 1):
+			maze.append([])
+			for x in range(x_dim + 1):
+				maze[y].append(0)
+		place_border()
+		dfs(starting_coords)
+		generate_pipes()
+		generate = false
+
+
+
+
 var maze = []
 
 var adj4 = [
@@ -26,16 +43,6 @@ var adj4 = [
 	Vector2i(0, 1),
 	Vector2i(0, -1),
 ]
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	for y in range(y_dim + 1):
-		maze.append([])
-		for x in range(x_dim + 1):
-			maze[y].append(0)
-	place_border()
-	dfs(starting_coords)
-	generate_pipes()
 
 
 func generate_pipes(): 

@@ -1,8 +1,12 @@
 extends CharacterBody2D
+class_name Player
 
-@export var move_speed: float = 400
+@export_group("Combat")
+@export var max_hp: float = 3
+@export var weapon: Weapon
+@export_group("Aerial Physics")
 @export var gravity: float = 1600
-@export_group("Jump")
+@export_subgroup("Jump")
 @export var jump_height: float = 192
 @export var min_jump_height: float = 64
 @export var grounded_rays: Node2D
@@ -17,6 +21,7 @@ extends CharacterBody2D
 @export var wall_jump_cooldown: float = 0.5
 @export var sliding_gravity_cap: float = 200
 @export_group("Grounded Physics")
+@export var move_speed: float = 400
 @export var acceleration: float = 3200
 @export var friction_scale: float = 0.2
 @export_subgroup("Dash")
@@ -28,6 +33,8 @@ extends CharacterBody2D
 @export_group("Floating Physics")
 @export var air_acceleration: float = 1600
 @export var air_resistance_scale: float = 10
+
+@onready var hp: float = max_hp
 
 var _jump_velocity: float = 0
 var _min_jump_velocity: float = 0
@@ -44,6 +51,7 @@ var left_colliding: bool = false
 var right_colliding: bool = false
 
 func _ready() -> void:
+	Globals.player = self
 	_jump_velocity = -sqrt(2 * jump_height * gravity)
 	_min_jump_velocity = -sqrt(2 * min_jump_height * gravity)
 	_last_grounded = coyote_time + 1 # Make sure that the game doesn't let you jump midair just because of loading time
@@ -173,3 +181,9 @@ func _check_rays() -> void:
 	for ray in right_rays.get_children(): 
 		if ray.is_colliding(): 
 			right_colliding = true
+
+
+func damaged(amount: float) -> void: 
+	hp -= amount
+	if hp <= 0: 
+		print("Player has died!") # TODO: Add death logic

@@ -17,8 +17,8 @@ var current_letter_num = 65
 @export var y_dim: int = 35
 @export var x_dim: int = 35
 @export var starting_coords = Vector2i(0, 0)
+@export var valve_percentage: float = 20
 @export var pipes: Array[Vector2i]
-
 @export var generate: bool = false: 
 	set(_value): 
 		clear()
@@ -66,9 +66,15 @@ func generate_pipes():
 					set_cell(Vector2i(x, y), 0, Vector2i(1, 0))
 				# Double connections (straight lines)
 				if top_connection and bottom_connection and not (left_connection or right_connection): 
-					set_cell(Vector2i(x, y), 0, Vector2i(0, 2))
+					if randf_range(0, 100) < valve_percentage: 
+						set_cell(Vector2i(x, y), 0, Vector2i(0, 2))
+					else: 
+						set_cell(Vector2i(x, y), 0, Vector2i(5, 2))
 				if right_connection and left_connection and not (top_connection or bottom_connection): 
-					set_cell(Vector2i(x, y), 0, Vector2i(1, 2))
+					if randf_range(0, 100) < valve_percentage: 
+						set_cell(Vector2i(x, y), 0, Vector2i(1, 2))
+					else: 
+						set_cell(Vector2i(x, y), 0, Vector2i(5, 0))
 				# Double connections (corners)
 				if right_connection and bottom_connection and not (left_connection or top_connection): 
 					set_cell(Vector2i(x, y), 0, Vector2i(2, 0))

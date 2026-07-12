@@ -16,8 +16,8 @@ curve = SubResource("Curve_m2vgh")
 
 [resource]
 particle_flag_disable_z = true
-angle_min = -9.9999895
-angle_max = 10.0000105
+angle_min = -10.0
+angle_max = 10.0
 gravity = Vector3(0, 0, 0)
 scale_curve = SubResource("CurveTexture_f8hur")
 color_ramp = SubResource("GradientTexture1D_cpt2a")

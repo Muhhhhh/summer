@@ -215,11 +215,11 @@ shape = SubResource("CapsuleShape2D_gkk85")
 target_position = Vector2(0, 64)
 
 [node name="RayCast2D2" type="RayCast2D" parent="Grounded Rays" unique_id=1912700630]
-position = Vector2(-6, 0)
+position = Vector2(-24, -8)
 target_position = Vector2(0, 64)
 
 [node name="RayCast2D3" type="RayCast2D" parent="Grounded Rays" unique_id=619651477]
-position = Vector2(6, 0)
+position = Vector2(24, -8)
 target_position = Vector2(0, 64)
 
 [node name="Right Rays" type="Node2D" parent="." unique_id=1146099345]

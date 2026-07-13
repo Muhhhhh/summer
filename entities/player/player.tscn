@@ -5,10 +5,11 @@
 [ext_resource type="Script" uid="uid://cvi1q0co0hd6p" path="res://entities/player/attacks/weapon.gd" id="3_bls4j"]
 [ext_resource type="Texture2D" uid="uid://bkrmngin3j6lg" path="res://icon.svg" id="3_sglur"]
 [ext_resource type="Script" uid="uid://bvsew3mbst20a" path="res://entities/hurtbox.gd" id="5_fkugw"]
+[ext_resource type="Texture2D" uid="uid://bdyjbgb7jh33w" path="res://entities/player/animations/idle.png" id="6_8fjmc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gkk85"]
-radius = 32.0
-height = 128.0
+radius = 20.0
+height = 116.0
 
 [sub_resource type="Animation" id="Animation_bls4j"]
 length = 0.001
@@ -175,6 +176,47 @@ size = Vector2(160, 64)
 radius = 24.0
 height = 96.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_qiwj3"]
+atlas = ExtResource("6_8fjmc")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26q78"]
+atlas = ExtResource("6_8fjmc")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bectd"]
+atlas = ExtResource("6_8fjmc")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wvtmh"]
+atlas = ExtResource("6_8fjmc")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p8eaw"]
+animations = [{
+"frames": [{
+"duration": 2.7,
+"texture": SubResource("AtlasTexture_qiwj3")
+}, {
+"duration": 2.7,
+"texture": SubResource("AtlasTexture_26q78")
+}],
+"loop": 1,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.7,
+"texture": SubResource("AtlasTexture_bectd")
+}, {
+"duration": 2.7,
+"texture": SubResource("AtlasTexture_wvtmh")
+}],
+"loop": 1,
+"name": &"idle_right",
+"speed": 5.0
+}]
+
 [node name="Player" type="CharacterBody2D" unique_id=127364493 node_paths=PackedStringArray("grounded_rays", "right_rays", "left_rays")]
 collision_layer = 32
 script = ExtResource("1_abrql")
@@ -203,10 +245,10 @@ shadow_item_cull_mask = 2
 texture = ExtResource("2_sglur")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=2068922759]
-polygon = PackedVector2Array(-32, -128, 32, -128, 32, 0, -32, 0)
+polygon = PackedVector2Array(-24, -120, 24, -120, 24, 0, -24, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=27712462]
-position = Vector2(0, -64)
+position = Vector2(0, -58)
 shape = SubResource("CapsuleShape2D_gkk85")
 
 [node name="Grounded Rays" type="Node2D" parent="." unique_id=957464452]
@@ -215,39 +257,39 @@ shape = SubResource("CapsuleShape2D_gkk85")
 target_position = Vector2(0, 64)
 
 [node name="RayCast2D2" type="RayCast2D" parent="Grounded Rays" unique_id=1912700630]
-position = Vector2(-24, -8)
+position = Vector2(-16, -8)
 target_position = Vector2(0, 64)
 
 [node name="RayCast2D3" type="RayCast2D" parent="Grounded Rays" unique_id=619651477]
-position = Vector2(24, -8)
+position = Vector2(16, -8)
 target_position = Vector2(0, 64)
 
 [node name="Right Rays" type="Node2D" parent="." unique_id=1146099345]
 
 [node name="Right" type="RayCast2D" parent="Right Rays" unique_id=1776327234]
-position = Vector2(32, -64)
+position = Vector2(20, -64)
 target_position = Vector2(48, 0)
 
 [node name="Right2" type="RayCast2D" parent="Right Rays" unique_id=403768876]
-position = Vector2(32, -96)
+position = Vector2(20, -96)
 target_position = Vector2(48, 0)
 
 [node name="Right3" type="RayCast2D" parent="Right Rays" unique_id=1979212797]
-position = Vector2(32, -32)
+position = Vector2(20, -32)
 target_position = Vector2(48, 0)
 
 [node name="Left Rays" type="Node2D" parent="." unique_id=1766028049]
 
 [node name="Left" type="RayCast2D" parent="Left Rays" unique_id=926799035]
-position = Vector2(-32, -64)
+position = Vector2(-20, -64)
 target_position = Vector2(-48, 0)
 
 [node name="Left2" type="RayCast2D" parent="Left Rays" unique_id=977670086]
-position = Vector2(-32, -96)
+position = Vector2(-20, -96)
 target_position = Vector2(-48, 0)
 
 [node name="Left3" type="RayCast2D" parent="Left Rays" unique_id=1477551072]
-position = Vector2(-32, -32)
+position = Vector2(-20, -32)
 target_position = Vector2(-48, 0)
 
 [node name="Sword" type="Node2D" parent="." unique_id=489733495 node_paths=PackedStringArray("animation_player", "damage_hitbox", "parry_hitbox")]
@@ -333,3 +375,12 @@ body = NodePath("..")
 position = Vector2(0, -64)
 shape = SubResource("CapsuleShape2D_p8eaw")
 debug_color = Color(0.7, 0, 0, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=428953786]
+texture_filter = 1
+position = Vector2(0, 5)
+sprite_frames = SubResource("SpriteFrames_p8eaw")
+animation = &"idle_left"
+autoplay = "idle_left"
+frame = 1
+offset = Vector2(0, -64)

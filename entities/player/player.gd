@@ -18,7 +18,7 @@ class_name Player
 @export var identical_jump_velocity: bool = true
 @export var wall_jump_velocity: float
 @export var wall_jump_uses: int = 5
-@export var wall_jump_cooldown: float = 0.5
+@export var wall_jump_cooldown: float = 0.25
 @export var sliding_gravity_cap: float = 400
 @export_group("Grounded Physics")
 @export var move_speed: float = 800

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://22q86sqy6bcr"
-path="res://.godot/imported/borders_base_tile_atlas.png-492763cc16d11652c897faa86c83a086.ctex"
+uid="uid://dgxo54vasv2fm"
+path="res://.godot/imported/idle_stance_right.png-b175873acde6fd48d9562333ad42880d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/copper_pipes/source_images/borders_base_tile_atlas.png"
-dest_files=["res://.godot/imported/borders_base_tile_atlas.png-492763cc16d11652c897faa86c83a086.ctex"]
+source_file="res://anim/idle_stance_right.png"
+dest_files=["res://.godot/imported/idle_stance_right.png-b175873acde6fd48d9562333ad42880d.ctex"]
 
 [params]
 

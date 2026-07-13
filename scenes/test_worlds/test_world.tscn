@@ -984,6 +984,12 @@ scale = Vector2(12, 12)
 range_item_cull_mask = 1
 shadow_enabled = false
 
+[node name="Polygon2D" parent="Player" index="2" unique_id=2068922759]
+visible = false
+
+[node name="idle_right" parent="Player" index="9" unique_id=2009917459]
+offset = Vector2(0, -58)
+
 [node name="GroundParticles" type="GPUParticles2D" parent="Player" unique_id=1439275793]
 emitting = false
 amount = 80

@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://cvi1q0co0hd6p" path="res://entities/player/attacks/weapon.gd" id="3_bls4j"]
 [ext_resource type="Texture2D" uid="uid://bkrmngin3j6lg" path="res://icon.svg" id="3_sglur"]
 [ext_resource type="Script" uid="uid://bvsew3mbst20a" path="res://entities/hurtbox.gd" id="5_fkugw"]
+[ext_resource type="Texture2D" uid="uid://dgxo54vasv2fm" path="res://anim/idle_stance_right.png" id="6_8fjmc"]
+[ext_resource type="Texture2D" uid="uid://b2mn63mfd0f00" path="res://anim/idle_stance_left.png" id="7_qiwj3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gkk85"]
 radius = 32.0
@@ -175,6 +177,77 @@ size = Vector2(160, 64)
 radius = 24.0
 height = 96.0
 
+[sub_resource type="Animation" id="Animation_bectd"]
+length = 0.001
+step = 0.007
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("idle_right:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("idle_left:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_7thud"]
+resource_name = "idle_left"
+length = 1.4
+loop_mode = 2
+step = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("idle_left:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.07),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_wvtmh"]
+resource_name = "idle_right"
+length = 1.4
+loop_mode = 1
+step = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("idle_right:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06998151),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7thud"]
+_data = {
+&"RESET": SubResource("Animation_bectd"),
+&"idle_left": SubResource("Animation_7thud"),
+&"idle_right": SubResource("Animation_wvtmh")
+}
+
 [node name="Player" type="CharacterBody2D" unique_id=127364493 node_paths=PackedStringArray("grounded_rays", "right_rays", "left_rays")]
 collision_layer = 32
 script = ExtResource("1_abrql")
@@ -333,3 +406,19 @@ body = NodePath("..")
 position = Vector2(0, -64)
 shape = SubResource("CapsuleShape2D_p8eaw")
 debug_color = Color(0.7, 0, 0, 0.41960785)
+
+[node name="idle_right" type="Sprite2D" parent="." unique_id=2009917459]
+texture = ExtResource("6_8fjmc")
+offset = Vector2(-2, 0)
+hframes = 2
+frame = 1
+
+[node name="idle_left" type="Sprite2D" parent="." unique_id=654595031]
+visible = false
+texture = ExtResource("7_qiwj3")
+offset = Vector2(2, -58)
+hframes = 2
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1944038876]
+libraries/ = SubResource("AnimationLibrary_7thud")

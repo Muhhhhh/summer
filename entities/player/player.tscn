@@ -5,7 +5,8 @@
 [ext_resource type="Script" uid="uid://cvi1q0co0hd6p" path="res://entities/player/attacks/weapon.gd" id="3_bls4j"]
 [ext_resource type="Texture2D" uid="uid://bkrmngin3j6lg" path="res://icon.svg" id="3_sglur"]
 [ext_resource type="Script" uid="uid://bvsew3mbst20a" path="res://entities/hurtbox.gd" id="5_fkugw"]
-[ext_resource type="Texture2D" uid="uid://bdyjbgb7jh33w" path="res://entities/player/animations/idle.png" id="6_8fjmc"]
+[ext_resource type="Texture2D" uid="uid://b2mn63mfd0f00" path="res://anim/idle_stance_left.png" id="6_qiwj3"]
+[ext_resource type="Texture2D" uid="uid://dgxo54vasv2fm" path="res://anim/idle_stance_right.png" id="7_26q78"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gkk85"]
 radius = 20.0
@@ -176,45 +177,45 @@ size = Vector2(160, 64)
 radius = 24.0
 height = 96.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qiwj3"]
-atlas = ExtResource("6_8fjmc")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_26q78"]
-atlas = ExtResource("6_8fjmc")
-region = Rect2(128, 0, 128, 128)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_bectd"]
-atlas = ExtResource("6_8fjmc")
-region = Rect2(256, 0, 128, 128)
+atlas = ExtResource("6_qiwj3")
+region = Rect2(0, 0, 256, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wvtmh"]
-atlas = ExtResource("6_8fjmc")
-region = Rect2(384, 0, 128, 128)
+atlas = ExtResource("6_qiwj3")
+region = Rect2(256, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7thud"]
+atlas = ExtResource("7_26q78")
+region = Rect2(0, 0, 256, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1qjk"]
+atlas = ExtResource("7_26q78")
+region = Rect2(256, 0, 256, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p8eaw"]
 animations = [{
 "frames": [{
-"duration": 2.7,
-"texture": SubResource("AtlasTexture_qiwj3")
-}, {
-"duration": 2.7,
-"texture": SubResource("AtlasTexture_26q78")
-}],
-"loop": 1,
-"name": &"idle_left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 2.7,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_bectd")
 }, {
-"duration": 2.7,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_wvtmh")
 }],
 "loop": 1,
+"name": &"idle_left",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7thud")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1qjk")
+}],
+"loop": 1,
 "name": &"idle_right",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=127364493 node_paths=PackedStringArray("grounded_rays", "right_rays", "left_rays")]
@@ -245,6 +246,7 @@ shadow_item_cull_mask = 2
 texture = ExtResource("2_sglur")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=2068922759]
+visible = false
 polygon = PackedVector2Array(-24, -120, 24, -120, 24, 0, -24, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=27712462]
@@ -380,7 +382,6 @@ debug_color = Color(0.7, 0, 0, 0.41960785)
 texture_filter = 1
 position = Vector2(0, 5)
 sprite_frames = SubResource("SpriteFrames_p8eaw")
-animation = &"idle_left"
+animation = &"idle_right"
 autoplay = "idle_left"
-frame = 1
 offset = Vector2(0, -64)

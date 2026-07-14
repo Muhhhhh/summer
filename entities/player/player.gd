@@ -63,7 +63,18 @@ func _ready() -> void:
 
 var right_particles_timer: float = 0.0
 var left_particles_timer: float = 0.0
+var _current_anim: String = ""
+var _facing: int = 1  # 1 = right, -1 = left
 
+func _update_animation(x_input: int) -> void:
+	if x_input != 0:
+		_facing = x_input
+
+	var next_anim: String = "idle_right" if _facing == 1 else "idle_left"
+
+	if next_anim != _current_anim:
+		$AnimatedSprite2D.play(next_anim)
+		_current_anim = next_anim
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
 
@@ -78,7 +89,7 @@ func _physics_process(delta: float) -> void:
 	_handle_jump()
 
 	# delete this when you have actual animations
-	$Polygon2D.rotation_degrees = clamp(velocity.x / move_speed * 10, -20, 20)
+	_update_animation(x_input)
 	$GroundParticles.emitting = grounded and abs(velocity.x) >= move_speed * 0.5
 	$"Dash Trail".emitting = abs(velocity.x) > move_speed * 2
 	if $RightParticles.emitting: 

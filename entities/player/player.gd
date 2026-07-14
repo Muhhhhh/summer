@@ -70,7 +70,15 @@ func _update_animation(x_input: int) -> void:
 	if x_input != 0:
 		_facing = x_input
 
-	var next_anim: String = "idle_right" if _facing == 1 else "idle_left"
+	var suffix: String = "right" if _facing == 1 else "left"
+	var next_anim: String
+
+	if x_input != 0:
+		next_anim = "run_right"  # flipped for left
+		$AnimatedSprite2D.flip_h = _facing == -1
+	else:
+		next_anim = "idle_" + suffix
+		$AnimatedSprite2D.flip_h = false
 
 	if next_anim != _current_anim:
 		$AnimatedSprite2D.play(next_anim)

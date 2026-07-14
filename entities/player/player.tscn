@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bvsew3mbst20a" path="res://entities/hurtbox.gd" id="5_fkugw"]
 [ext_resource type="Texture2D" uid="uid://b2mn63mfd0f00" path="res://anim/idle_stance_left.png" id="6_qiwj3"]
 [ext_resource type="Texture2D" uid="uid://dgxo54vasv2fm" path="res://anim/idle_stance_right.png" id="7_26q78"]
+[ext_resource type="Texture2D" uid="uid://hgadkgxcrxnx" path="res://anim/run_right.png" id="8_26q78"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gkk85"]
 radius = 20.0
@@ -193,6 +194,54 @@ region = Rect2(0, 0, 256, 128)
 atlas = ExtResource("7_26q78")
 region = Rect2(256, 0, 256, 128)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_j3ovn"]
+atlas = ExtResource("8_26q78")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_afbqv"]
+atlas = ExtResource("8_26q78")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqrof"]
+atlas = ExtResource("8_26q78")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wlsy"]
+atlas = ExtResource("8_26q78")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2kln"]
+atlas = ExtResource("8_26q78")
+region = Rect2(1280, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we0b7"]
+atlas = ExtResource("8_26q78")
+region = Rect2(1536, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtric"]
+atlas = ExtResource("8_26q78")
+region = Rect2(1792, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eyb6c"]
+atlas = ExtResource("8_26q78")
+region = Rect2(2048, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_221hk"]
+atlas = ExtResource("8_26q78")
+region = Rect2(2304, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghoj8"]
+atlas = ExtResource("8_26q78")
+region = Rect2(2560, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1t22"]
+atlas = ExtResource("8_26q78")
+region = Rect2(2816, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26q78"]
+atlas = ExtResource("8_26q78")
+region = Rect2(768, 0, 256, 256)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_p8eaw"]
 animations = [{
 "frames": [{
@@ -216,6 +265,47 @@ animations = [{
 "loop": 1,
 "name": &"idle_right",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j3ovn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_afbqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqrof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wlsy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2kln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we0b7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtric")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eyb6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_221hk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghoj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1t22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26q78")
+}],
+"loop": 1,
+"name": &"run_right",
+"speed": 12.0
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=127364493 node_paths=PackedStringArray("grounded_rays", "right_rays", "left_rays")]
@@ -382,6 +472,7 @@ debug_color = Color(0.7, 0, 0, 0.41960785)
 texture_filter = 1
 position = Vector2(0, 5)
 sprite_frames = SubResource("SpriteFrames_p8eaw")
-animation = &"idle_right"
+animation = &"run_right"
 autoplay = "idle_left"
+frame_progress = 0.8694714
 offset = Vector2(0, -64)

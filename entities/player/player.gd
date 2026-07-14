@@ -83,6 +83,8 @@ func _update_animation(x_input: int) -> void:
 	if next_anim != _current_anim:
 		$AnimatedSprite2D.play(next_anim)
 		_current_anim = next_anim
+
+
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta
 

@@ -5,9 +5,9 @@
 [ext_resource type="Script" uid="uid://cvi1q0co0hd6p" path="res://entities/player/attacks/weapon.gd" id="3_bls4j"]
 [ext_resource type="Texture2D" uid="uid://bkrmngin3j6lg" path="res://icon.svg" id="3_sglur"]
 [ext_resource type="Script" uid="uid://bvsew3mbst20a" path="res://entities/hurtbox.gd" id="5_fkugw"]
-[ext_resource type="Texture2D" uid="uid://b2mn63mfd0f00" path="res://anim/idle_stance_left.png" id="6_qiwj3"]
-[ext_resource type="Texture2D" uid="uid://dgxo54vasv2fm" path="res://anim/idle_stance_right.png" id="7_26q78"]
-[ext_resource type="Texture2D" uid="uid://hgadkgxcrxnx" path="res://anim/run_right.png" id="8_26q78"]
+[ext_resource type="Texture2D" uid="uid://b2mn63mfd0f00" path="res://entities/player/animations/idle_stance_left.png" id="6_26q78"]
+[ext_resource type="Texture2D" uid="uid://dgxo54vasv2fm" path="res://entities/player/animations/idle_stance_right.png" id="7_bectd"]
+[ext_resource type="Texture2D" uid="uid://hgadkgxcrxnx" path="res://entities/player/animations/run_right.png" id="8_wvtmh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gkk85"]
 radius = 20.0
@@ -179,67 +179,67 @@ radius = 24.0
 height = 96.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bectd"]
-atlas = ExtResource("6_qiwj3")
+atlas = ExtResource("6_26q78")
 region = Rect2(0, 0, 256, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wvtmh"]
-atlas = ExtResource("6_qiwj3")
+atlas = ExtResource("6_26q78")
 region = Rect2(256, 0, 256, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7thud"]
-atlas = ExtResource("7_26q78")
+atlas = ExtResource("7_bectd")
 region = Rect2(0, 0, 256, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a1qjk"]
-atlas = ExtResource("7_26q78")
+atlas = ExtResource("7_bectd")
 region = Rect2(256, 0, 256, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j3ovn"]
-atlas = ExtResource("8_26q78")
+atlas = ExtResource("8_wvtmh")
 region = Rect2(0, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_afbqv"]
-atlas = ExtResource("8_26q78")
+atlas = ExtResource("8_wvtmh")
 region = Rect2(256, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yqrof"]
-atlas = ExtResource("8_26q78")
+atlas = ExtResource("8_wvtmh")
 region = Rect2(768, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3wlsy"]
-atlas = ExtResource("8_26q78")
+atlas = ExtResource("8_wvtmh")
 region = Rect2(1024, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b2kln"]
-atlas = ExtResource("8_26q78")
+atlas = ExtResource("8_wvtmh")
 region = Rect2(1280, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_we0b7"]
-atlas = ExtResource("8_26q78")
+atlas = ExtResource("8_wvtmh")
 region = Rect2(1536, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mtric"]
-atlas = ExtResource("8_26q78")
+atlas = ExtResource("8_wvtmh")
 region = Rect2(1792, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eyb6c"]
-atlas = ExtResource("8_26q78")
+atlas = ExtResource("8_wvtmh")
 region = Rect2(2048, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_221hk"]
-atlas = ExtResource("8_26q78")
+atlas = ExtResource("8_wvtmh")
 region = Rect2(2304, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ghoj8"]
-atlas = ExtResource("8_26q78")
+atlas = ExtResource("8_wvtmh")
 region = Rect2(2560, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t1t22"]
-atlas = ExtResource("8_26q78")
+atlas = ExtResource("8_wvtmh")
 region = Rect2(2816, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_26q78"]
-atlas = ExtResource("8_26q78")
+atlas = ExtResource("8_wvtmh")
 region = Rect2(768, 0, 256, 256)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p8eaw"]
@@ -472,7 +472,6 @@ debug_color = Color(0.7, 0, 0, 0.41960785)
 texture_filter = 1
 position = Vector2(0, 5)
 sprite_frames = SubResource("SpriteFrames_p8eaw")
-animation = &"run_right"
+animation = &"idle_right"
 autoplay = "idle_left"
-frame_progress = 0.8694714
 offset = Vector2(0, -64)

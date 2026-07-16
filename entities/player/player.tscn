@@ -196,51 +196,51 @@ region = Rect2(256, 0, 256, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_26q78"]
 atlas = ExtResource("8_wvtmh")
-region = Rect2(0, 0, 128, 128)
+region = Rect2(0, 0, 256, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j3ovn"]
 atlas = ExtResource("8_wvtmh")
-region = Rect2(128, 0, 128, 128)
+region = Rect2(256, 0, 256, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_afbqv"]
 atlas = ExtResource("8_wvtmh")
-region = Rect2(256, 0, 128, 128)
+region = Rect2(512, 0, 256, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gx6sm"]
 atlas = ExtResource("8_wvtmh")
-region = Rect2(384, 0, 128, 128)
+region = Rect2(768, 0, 256, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yqrof"]
 atlas = ExtResource("8_wvtmh")
-region = Rect2(512, 0, 128, 128)
+region = Rect2(1024, 0, 256, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3wlsy"]
 atlas = ExtResource("8_wvtmh")
-region = Rect2(640, 0, 128, 128)
+region = Rect2(1280, 0, 256, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b2kln"]
 atlas = ExtResource("8_wvtmh")
-region = Rect2(768, 0, 128, 128)
+region = Rect2(1536, 0, 256, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_we0b7"]
 atlas = ExtResource("8_wvtmh")
-region = Rect2(896, 0, 128, 128)
+region = Rect2(1792, 0, 256, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mtric"]
 atlas = ExtResource("8_wvtmh")
-region = Rect2(1024, 0, 128, 128)
+region = Rect2(2048, 0, 256, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eyb6c"]
 atlas = ExtResource("8_wvtmh")
-region = Rect2(1152, 0, 128, 128)
+region = Rect2(2304, 0, 256, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_221hk"]
 atlas = ExtResource("8_wvtmh")
-region = Rect2(1280, 0, 128, 128)
+region = Rect2(2560, 0, 256, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ghoj8"]
 atlas = ExtResource("8_wvtmh")
-region = Rect2(1408, 0, 128, 128)
+region = Rect2(2816, 0, 256, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p8eaw"]
 animations = [{

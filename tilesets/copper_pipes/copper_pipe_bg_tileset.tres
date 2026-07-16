@@ -1,5 +1,6 @@
 [gd_resource type="TileSet" format=3 uid="uid://ovkv15d5sgps"]
 
+[ext_resource type="Texture2D" uid="uid://bheoy7akbkjqv" path="res://tilesets/maze_gen/gear_anim.png" id="2_0pcm3"]
 [ext_resource type="Texture2D" uid="uid://ttcx8y3l6rgl" path="res://tilesets/copper_pipes/source_images/pipes.png" id="2_dix01"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m3u7x"]
@@ -24,6 +25,17 @@ texture_region_size = Vector2i(128, 128)
 4:2/0 = 0
 5:2/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pf7gr"]
+texture = ExtResource("2_0pcm3")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+
 [resource]
 tile_size = Vector2i(128, 128)
 sources/0 = SubResource("TileSetAtlasSource_m3u7x")
+sources/1 = SubResource("TileSetAtlasSource_pf7gr")

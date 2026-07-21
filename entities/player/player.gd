@@ -73,7 +73,10 @@ func _update_animation(x_input: int) -> void:
 	var suffix: String = "right" if _facing == 1 else "left"
 	var next_anim: String
 
-	if x_input != 0:
+	if not grounded:
+		next_anim = "jump_right"  # flipped for left
+		$AnimatedSprite2D.flip_h = _facing == -1
+	elif x_input != 0:
 		next_anim = "run_right"  # flipped for left
 		$AnimatedSprite2D.flip_h = _facing == -1
 	else:
@@ -83,7 +86,6 @@ func _update_animation(x_input: int) -> void:
 	if next_anim != _current_anim:
 		$AnimatedSprite2D.play(next_anim)
 		_current_anim = next_anim
-
 
 func _physics_process(delta: float) -> void:
 	velocity.y += gravity * delta

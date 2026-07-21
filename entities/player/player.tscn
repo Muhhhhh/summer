@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bvsew3mbst20a" path="res://entities/hurtbox.gd" id="5_fkugw"]
 [ext_resource type="Texture2D" uid="uid://b2mn63mfd0f00" path="res://entities/player/animations/idle_stance_left.png" id="6_26q78"]
 [ext_resource type="Texture2D" uid="uid://dgxo54vasv2fm" path="res://entities/player/animations/idle_stance_right.png" id="7_bectd"]
+[ext_resource type="Texture2D" uid="uid://bn3lbqxugu2qs" path="res://entities/player/animations/jump-right.png" id="8_bectd"]
 [ext_resource type="Texture2D" uid="uid://hgadkgxcrxnx" path="res://entities/player/animations/run_right.png" id="8_wvtmh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gkk85"]
@@ -194,6 +195,46 @@ region = Rect2(0, 0, 256, 128)
 atlas = ExtResource("7_bectd")
 region = Rect2(256, 0, 256, 128)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1t22"]
+atlas = ExtResource("8_bectd")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50fht"]
+atlas = ExtResource("8_bectd")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wuv6x"]
+atlas = ExtResource("8_bectd")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpopc"]
+atlas = ExtResource("8_bectd")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wq0jh"]
+atlas = ExtResource("8_bectd")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt4e4"]
+atlas = ExtResource("8_bectd")
+region = Rect2(1280, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24ehl"]
+atlas = ExtResource("8_bectd")
+region = Rect2(1536, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwdx1"]
+atlas = ExtResource("8_bectd")
+region = Rect2(1792, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vewsg"]
+atlas = ExtResource("8_bectd")
+region = Rect2(2048, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2soq1"]
+atlas = ExtResource("8_bectd")
+region = Rect2(2304, 0, 256, 256)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_26q78"]
 atlas = ExtResource("8_wvtmh")
 region = Rect2(0, 0, 256, 128)
@@ -265,6 +306,41 @@ animations = [{
 "loop": 1,
 "name": &"idle_right",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1t22")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50fht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wuv6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qpopc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wq0jh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gt4e4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24ehl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwdx1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vewsg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2soq1")
+}],
+"loop": 1,
+"name": &"jump_right",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -473,6 +549,6 @@ z_index = 1
 texture_filter = 1
 position = Vector2(0, 5)
 sprite_frames = SubResource("SpriteFrames_p8eaw")
-animation = &"run_right"
+animation = &"jump_right"
 autoplay = "idle_left"
 offset = Vector2(0, -64)
